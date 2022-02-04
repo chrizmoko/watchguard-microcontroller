@@ -1,0 +1,4 @@
+{
+	"source_library_dir": "../libs/",
+	"arduino_library_dir": "<arduino_library_path>"
+}
