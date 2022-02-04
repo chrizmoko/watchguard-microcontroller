@@ -1,0 +1,6 @@
+[submodule "Arduino/watchguard/libs/Arduino-LiquidCrystal-I2C-library"]
+	path = Arduino/watchguard/libs/Arduino-LiquidCrystal-I2C-library
+	url = https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library
+[submodule "Arduino/watchguard/libs/PulseSensorPlayground"]
+	path = Arduino/watchguard/libs/PulseSensorPlayground
+	url = https://github.com/WorldFamousElectronics/PulseSensorPlayground
