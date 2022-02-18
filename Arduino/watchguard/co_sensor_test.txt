@@ -1,0 +1,43 @@
+#include <ULP.h>
+#include <SoftwareSerial.h>
+
+
+const int C1 = A0;
+const int T1 = A3;
+
+const float SENSITIVITY = 4.94f;
+
+
+CO co_sensor(C1, T1, SENSITIVITY);
+
+
+// RF Module
+SoftwareSerial mySerial(10, 11);
+
+
+void setup() {
+    const int BAUD_RATE = 9600;
+
+    Serial.begin(BAUD_RATE);
+
+    while (!Serial);
+
+    mySerial.begin(BAUD_RATE);
+
+    Serial.println("Setting up...");
+    co_sensor.zero();
+}
+
+void loop() {
+    // put your main code here, to run repeatedly:
+
+    if (mySerial.available()) {
+        Serial.write(mySerial.read());
+    }
+
+     co_sensor.getTemp(1);
+     Serial.println(co_sensor.convertT('F'));
+
+    // Delay 20 milliseconds
+    delay(20);
+}
